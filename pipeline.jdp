@@ -8,14 +8,12 @@ pipeline {
         }
         stage('build') { 
             steps {
-                 sh 'mvn clean package '
+                 sh 'mvn clean package'
             }
         }
         stage('test') { 
             steps {
-                withSonarQubeEnv ('sonar') {
-                  sh 'mvn sonar:sonar'
-                }
+                 echo 'successfully test'
             }
         }
         stage('deploy') { 
