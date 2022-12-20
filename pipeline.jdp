@@ -17,12 +17,12 @@ pipeline {
                sh 'mvn sonar:sonar'
                }
             }
+        }
            stage('QualityCheck') { 
             steps {
                  waitForQualityGate true
                  }
             } 
-        }
         stage('deploy') { 
             steps {
                 echo 'successfully deploy'
